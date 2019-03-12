@@ -34,7 +34,7 @@ var fifth = new Question("The position of a color on a rainbow or color wheel is
 var sixth = new Question("The lightness or darkness of a color is its:",
 ["Saturation","Value","Chroma","Intensity"], "2")
 
-var seventh = new Question("Intense, vivid colors have high ______ while dull, muted colors have low _______",
+var seventh = new Question("Intense, vivid colors have high ______ while dull, washed-out, or muted colors have low _______",
 ["Brightness","Balance","Saturation","Tone"], "3")
 
 var eighth = new Question("The hexa-decimal code #66aa88 would make approximately what color?",
@@ -50,7 +50,7 @@ currentQ = 0;
 
 chosen = false;
 
-timerSeconds = 10;
+timerSeconds = 12;
 
 timerTenths = 0;
 
@@ -59,7 +59,7 @@ var timerInterval;
 //loads the current question.
 
 function loadQuestion(obj) {
-    timerSeconds = 10;
+    timerSeconds = 12;
 
     timerTenths = 0;
 
@@ -143,6 +143,9 @@ $(".choice").click(function(){
 
         $("#next").show();
 
+        if(currentQ === maxScore - 1)
+            $("#next").text("Restart")
+
         console.log($(this).attr("data-number"))
 
         if($(this).attr("data-number") === qArray[currentQ].answer)
@@ -179,6 +182,22 @@ $("#next").click(function(){
         chosen = false;
 
         $(this).hide()
+    }
+    else{
+        currentQ = 0
+
+        loadQuestion(qArray[currentQ]);
+
+        $(".choice").css("background","#553388");
+        
+
+        chosen = false;
+
+        $(this).hide()
+
+        score = 0;
+
+        $("#score").text("Score: " + score + " / " + maxScore)
     }
 })
 
