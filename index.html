@@ -4,7 +4,7 @@
     
     <head>
         <title>
-            Trivia Game
+            Color Trivia
         </title>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -14,7 +14,7 @@
 
     <body>
         <header>
-            <h1> Trivia Game</h1>
+            <h1>Color Trivia</h1>
         </header>
 
         <p id="question">
@@ -25,23 +25,31 @@
 
         </div>
 
-        <div class = "choice" id="c-1" value="1">
+        <div class = "flex-container">
+            <div class = "choice" id="c-1" data-number="1">
 
+            </div>
+
+            <div class = "choice" id="c-2" data-number="2">
+
+            </div>
+        
         </div>
 
-        <div class = "choice" id="c-2" value="2">
+        <div class = "flex-container">
+            <div class = "choice" id="c-3" data-number="3">
 
-        </div>
+            </div>
 
-        <div class = "choice" id="c-3" value="3">
+            <div class = "choice" id="c-4" data-number="4">
 
-        </div>
-
-        <div class = "choice" id="c-4" value="4">
-
+            </div>
         </div>
 
         <div id="score"></div>
+        <div class = "flex-container">
+            <div id="next">Next Question</div>
+        </div>
 
         <script src = "./assets/javascript/app.js"></script>
 
